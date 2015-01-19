@@ -7,12 +7,15 @@ before_install:
   - "echo '--colour' > ~/.rspec"
   - git config --global user.name 'Travis CI'
   - git config --global user.email 'travis-ci@example.com'
-
+  - source ~/.rvm/scripts/rvm && rvm use 2.2.0
+  
 install:
   - bundle install
 
 notifications:
   email: false
 
-sudo: false
+#sudo: false
 cache: true
+
+build_image: shippable/minv2:beta
